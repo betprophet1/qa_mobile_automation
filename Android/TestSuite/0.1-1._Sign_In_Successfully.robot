@@ -20,5 +20,5 @@ Library           AppiumLibrary
     NavigateToProfileScr
     Element Should Contain Text    //android.widget.TextView[contains(@text,'${test_data[0]['Email']}')]    ${test_data[0]['Email']}
     BackToAccountScr
-    AccountScr.LogOut
+    AccountScr.LogOut    ${test_data[0]['First Name']}    ${test_data[0]['Last Name']} 
     [Teardown]    FillResult    0.1-1. Sign In Successfully    3    ${TEST_STATUS}

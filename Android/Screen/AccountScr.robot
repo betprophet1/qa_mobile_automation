@@ -12,11 +12,13 @@ NavigateToProfileScr
 
 BackToAccountScr
     Go Back
+    Sleep    ${time_out}
     Wait Until Page Contains    Withdrawable    ${time_out}
     Wait Until Page Contains    Promotional    ${time_out}
     Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Withdraw')]    ${time_out}
     Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Deposit')]    ${time_out}
 LogOut
+    [Arguments]    ${firstName}    ${lastName}
     #Scroll Up    //android.widget.TextView[contains(@text,'Logout')]
     Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Logout')]    ${time_out}
     ClickButton    //android.widget.TextView[contains(@text,'Logout')]
@@ -25,7 +27,8 @@ LogOut
     Wait Until Page Contains    Are you sure you want to log out?    ${time_out}
     Click Text    Confirm
     Wait Until Page Does Not Contain    Logging Out! You are logging out. Please wait few seconds
-    #Wait Until Page Does Not Contain    You are logging out. Please wait few seconds
-    Wait Until Page Contains    Bye    ${time_out}
+    Sleep    ${time_out}
+    Wait Until Page Contains    Bye ${firstName} ${lastName}!    ${time_out}
     Wait Until Page Contains    You have successfully logged out. If you or someone you know has a gambling problem and wants help, call 1-800-Gambler.    ${time_out}
     Click Text    Okay!
+    Wait Until Page Contains    Make sure that you are logged in to see your account.    ${time_out}
