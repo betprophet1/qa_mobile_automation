@@ -36,3 +36,12 @@
 
 10. View Test results
    - View Log in Browser (Ctrl + L)
+
+
+-----------------------------------------------------------------------------
+# Run Test Suite by Command line
+Tests Suite are executed using the robot command
+   - robot tests.robot
+
+![2022-01-25_12h14_46](https://user-images.githubusercontent.com/3149594/150916103-dec82370-d2b6-4e35-8f39-359d1a70abb7.png)
+
