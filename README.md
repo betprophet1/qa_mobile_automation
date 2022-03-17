@@ -19,7 +19,7 @@
   - pip install robotframework-ride
   - pip install robotframework-appiumlibrary
   - pip install robotframework-seleniumlibrary
-  - 
+  - pip install robotframework-excellib
 ## B. Run test case
 6. Start Appium server GUI
     host: 127.0.0.1
