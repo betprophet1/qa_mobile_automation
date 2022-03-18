@@ -1,6 +1,7 @@
 *** Settings ***
 Resource          ../Lib&Variables/Commonkeyworks.robot
 Resource          ../Lib&Variables/Variables.robot
+Library    AppiumLibrary
 
 *** Keywords ***
 NavigateToProfileScr
@@ -19,7 +20,8 @@ BackToAccountScr
     Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Deposit')]    ${time_out}
 LogOut
     [Arguments]    ${firstName}    ${lastName}
-    #Scroll Up    //android.widget.TextView[contains(@text,'Logout')]
+    Swipe By Percent    50     50     -50    -70  1000
+    Sleep    ${time_out}
     Wait Until Page Contains Element    //android.widget.TextView[contains(@text,'Logout')]    ${time_out}
     ClickButton    //android.widget.TextView[contains(@text,'Logout')]
     Sleep    ${time_out}

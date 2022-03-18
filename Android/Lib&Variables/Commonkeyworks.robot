@@ -1,6 +1,6 @@
 *** Settings ***
 Library    AppiumLibrary
-Library    Data.py
+Library    /Users/krin_nguyen/Documents/GitHub/qa_mobile_automation/Android/Lib&Variables/Data.py
 Library    ExcelLibrary
 Library    String
 *** Keywords ***
@@ -8,11 +8,11 @@ OpenProphetApp
     [Documentation]    Author: Hoang
     ...
     ...    This keyword to open Phone and Prophet App (app has been installed on device)
-    Open Application    ${remote_url}    platformName=${ANDROID_PLATFORM_NAME}    platformVersion=${ANDROID_PLATFORM_VERSION}    deviceName=${ANDROID_DEVICE_NAME}    appPackage=${ANDROID_APP_PACKAGE}    appActivity=${ANDROID_APP_ACTIVITY} 
-    Sleep    15
+    Open Application    ${remote_url}    platformName=${ANDROID_PLATFORM_NAME}    platformVersion=${ANDROID_PLATFORM_VERSION}    deviceName=${ANDROID_DEVICE_NAME}    appPackage=${ANDROID_APP_PACKAGE}    appActivity=${ANDROID_APP_ACTIVITY}    autoGrantPermissions=true    noReset=true    
+    Sleep    ${time_out}
     Wait Until Page Contains    Login    ${time_out}
     Wait Until Page Contains    Register    ${time_out}
-    Sleep    10
+    Sleep    ${time_out}
 
 GetDataTest
     [Arguments]    ${excel_path}    ${sheet_name}

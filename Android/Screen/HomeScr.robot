@@ -15,7 +15,7 @@ LogIn
     InputField    //android.widget.EditText[contains(@text,'Email Address')]    ${Email}
     InputField    //android.widget.EditText[contains(@text,'Password')]    ${Pass}
     ClickButton    //android.widget.TextView[contains(@text,'Continue')]
-    Sleep    10
+    Sleep    ${time_out}
 	Page Should Not Contain Text    Login
     Page Should Not Contain Text    Register
 
